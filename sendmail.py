@@ -21,10 +21,9 @@ def send_mail(receivers, timeout=5):
 
 if __name__ == '__main__':
 
-    user_email = ['email_address','email_address']
-    subject = 'God send you an email'
-    body = 'Do you know me ?'
-    for user in user_email:
+    subject = "God send you an email"
+    body = "Do you know me ?"
+    for user in open("email"):
         receivers = {'email': user,'subject': subject,'body': body}
         send_mail(receivers)
         print 'Send to %s successful' % user
